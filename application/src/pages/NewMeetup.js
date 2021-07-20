@@ -7,7 +7,7 @@ export const NewMeetupPage = () => {
 
   const history = useHistory();
 
-  const handleAddMeetup = useCallback(meetup => {
+  const addMeetupHandler = useCallback(meetup => {
     // Get 405 error without "auth" query param
     fetch(
       `https://react-meetups-28834-default-rtdb.europe-west1.firebasedatabase.app/meetups.json?auth=${process.env.REACT_APP_FIREBASE_AUTH_KEY}`,
@@ -23,7 +23,7 @@ export const NewMeetupPage = () => {
   return (
     <section>
       <h1>Add New Meetup</h1>
-      <NewMeetupForm onAddMeetup={handleAddMeetup} />
+      <NewMeetupForm onAddMeetup={addMeetupHandler} />
     </section>
   );
 };

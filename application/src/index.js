@@ -5,11 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
+import { FavoritesContextProvider } from './store/favorites.context';
+
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <FavoritesContextProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </FavoritesContextProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
