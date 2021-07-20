@@ -4,7 +4,7 @@ import { Card } from '../ui/Card';
 
 import classes from './NewMeetupForm.module.sass';
 
-export const NewMeetupForm = () => {
+export const NewMeetupForm = ({ onAddMeetup }) => {
 
   const titleInputRef = useRef();
   const imageInputRef = useRef();
@@ -23,7 +23,7 @@ export const NewMeetupForm = () => {
       address: enteredAddress,
       description: enteredDescription,
     };
-    console.log('meetupData', meetupData);
+    onAddMeetup(meetupData);
   }, []);
 
   return (
